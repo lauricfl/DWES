@@ -17,7 +17,6 @@ if(isset($conexion)) {
         $resultado->bindColumn(2, $edad);
         // Recuperar los registros con PDO::FETCH_BOUND
         while($registro = $resultado->fetch()) {
-            
             echo "El usuario $nombre tiene $edad años <br>";
         }
     }

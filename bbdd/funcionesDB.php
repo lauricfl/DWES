@@ -57,3 +57,28 @@ function insertarValores($conexion, $tabla, $valores) {
 
     return $success;
 }
+
+/**
+ * Funcion que inserta en la tabla clientes  un cliente nuevo
+ * @param conexion Objeto PDO con la conexion a la DB
+ * @param datos Array numerico con los valores para cada uno de los campos de la tabla
+ * @return true Si se ha insertado correctamente 
+ * @return false Si no
+ */
+function insertarCliente($conexion, $datos)
+{
+    //Crear una consulta preparada
+    $sql = "INSERT INTO tclientes(`cNombre`, `cApellido1`, `cApellido2`, `nEdad`, `cTelefono`, `cEmail`) VALUES (:nom,:ap1, :ap2, :edad, :tlf, :email)";
+    //Prepararla 
+    $pdostmt = $conexion->prepare($sql);
+    //Asignar valores
+    $pdostmt->bindParam(':nom', $datos[0]);
+    $pdostmt->bindParam(':ap1', $datos[1]);
+    $pdostmt->bindParam(':ap2', $datos[2]);
+    $pdostmt->bindParam(':edad', $datos[3]);
+    $pdostmt->bindParam(':tlf', $datos[4]);
+    $pdostmt->bindParam(':email', $datos[5]);
+
+    //Ejecutarla y devolver el valor
+    return $pdostmt->execute();
+}
