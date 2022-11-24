@@ -6,7 +6,7 @@ set_error_handler("miGestorDeErrores");     // fuerzo la utilización de mi gest
 include_once('pepito.php');                      // incluyo un fichero que no existe
 restore_error_handler();                    // le paso el control de errores a PHP
 include_once('pepito.php');                      // incluyo un fichero que no existe
-
+echo "hola";
 function miGestorDeErrores($nivel, $mensaje)
 {
     switch ($nivel) {
