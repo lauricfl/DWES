@@ -1,8 +1,20 @@
 <?php
 
 class DB{
+    /**
+     * Constantes
+     */
     const HOST = "localhost";
-    const USUARIO = "root";
+    const USER = "root";
     const PASSWORD = ""; 
-    const BASE_DATOS = "dbBatallas";
+    const DB = "dbBatallas";
+
+    /**
+     * Atributos o propiedades
+     */
+
+
+     /**
+      * Métodos
+      */
 }

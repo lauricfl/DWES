@@ -1,6 +1,4 @@
 <?php
 require "DB.php";
- echo "HOST:".DB::HOST ."<br>";
- echo "USUARIO:".DB::USUARIO."<br>";
- echo "PASSWORD:".DB::PASSWORD."<br>";
- echo "BASE DE DATOS:".DB::BASE_DATOS."<br>";
+echo "Para conectarse a la base de datos " . DB::DB . " tienes que utilizar el HOST "
+ . DB::HOST . " con el usuario " . DB::USER . " y el password ".DB::PASSWORD;
