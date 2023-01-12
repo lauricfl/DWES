@@ -1,9 +1,16 @@
 <?php
 class Persona { 
 
-	private $id; 
-	private $nombre;
+	protected $id; 
+	protected $nombre;
+	protected $apellidos;
 	private $email;
+
+	public function __construct($nombre, $apellidos)
+	{
+		$this->nombre = $nombre;
+		$this->apellidos = $apellidos;
+	}
 	
     public function __set($var, $valor) {
 		if (property_exists(__CLASS__, $var)) { 
