@@ -1,5 +1,6 @@
 <?php
 include "iInventario.php";
+include "./MVC/Modelos/Producto.php";
 
 class Inventario implements iInventario
 {   private $cantidad = 0;
