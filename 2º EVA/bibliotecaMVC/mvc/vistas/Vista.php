@@ -47,10 +47,8 @@ class Vista
         $table = '';
         require "./media/php/biblioteca.php";
         foreach ($libros as $key => $value) {
-            $index=0;
-            $table .= "<tr><td><input type='checkbox' value=".$index."</td><td>" . $key . "</td><td>" . $value . "</td></tr>";
-            $index++;
-        } 
+            $table .= "<tr><td><input type='checkbox' name='ckElem[]' value=".$key."</td><td>" . $key . "</td><td>" . $value . "</td></tr>";
+            } 
         /* for ($i = 0; $i < count($datos); $i++) {
             // Relleno cada fila individual de productos
             $table .= "<tr><td>" . $datos[$i] . "</td><td>" . $datos[$i] . "</td></tr>";

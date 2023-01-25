@@ -13,7 +13,7 @@ if (!isset($_REQUEST) || isset($_REQUEST) and empty(($_REQUEST))) {
         //Si el usuario ha seleccionado alquilar
         require "alquilarController.php";
     } else if ($_REQUEST["action"] == "seleccion") {
-        
+        echo "alquiladando libros";
         //require "inventarioController.php";
     }else{
         require "inventarioController.php";
