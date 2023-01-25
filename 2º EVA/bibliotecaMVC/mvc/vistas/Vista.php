@@ -17,13 +17,13 @@ class Vista
     }
     public function renderizarVista($path)
     {
-         // Cargo el diccionario de datos de la ruta especificada
-         require $path;
+        // Cargo el diccionario de datos de la ruta especificada
+        require $path;
 
-         // Recorro el diccionario para sustituir en la vista los bloque configurables
-         foreach ($dict as $key => $value) {
-             $this->setVista(str_replace('{' . $key . '}', $value, $this->getVista()));
-         }
+        // Recorro el diccionario para sustituir en la vista los bloque configurables
+        foreach ($dict as $key => $value) {
+            $this->setVista(str_replace('{' . $key . '}', $value, $this->getVista()));
+        }
     }
 
     public function getVista()
@@ -42,5 +42,26 @@ class Vista
 
         //Devolvemos la vista
         return $this->vista;
+    }
+    public function renderizarKey($keyword){
+        $table = '';
+        require "./media/php/biblioteca.php";
+        foreach ($libros as $key => $value) {
+            $index=0;
+            $table .= "<tr><td><input type='checkbox' value=".$index."</td><td>" . $key . "</td><td>" . $value . "</td></tr>";
+            $index++;
+        } 
+        /* for ($i = 0; $i < count($datos); $i++) {
+            // Relleno cada fila individual de productos
+            $table .= "<tr><td>" . $datos[$i] . "</td><td>" . $datos[$i] . "</td></tr>";
+        }
+         */
+        // Llamo al renderView que admite dos parámetros: texto configurable a sustituir y esta tabla.
+        $this->renderViewKeyword($keyword, $table);
+    }
+
+    public function renderViewKeyword($keyword, $html){
+        // Sustituyo la palabra clave pasada como parámetro por el código html también pasado como parámetro
+        $this->setVista(str_replace('{' . $keyword . '}', $html, $this->getVista()));
     }
 }
