@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{page_title}</title>
+</head>
+<body>
+    <!-- Cabecera de la página -->    
+    <h1>{page_heading}</h1>
+    <!-- Texto introduciendo la lista actual -->
+    <p>{text_before_shoppingList}</p>
+    <!-- Lista de la compra -->
+    <table border=1>
+        <tr>
+            <th>{text_col1}</th>
+            <th>{text_col2}</th>
+        </tr>
+    {products_rows}
+    </table>
+    <!-- Párrafo introduciendo el formulario de inserción de nuevos productos -->
+    <p>{text_before_new_product_form}</p>
+    <!-- Formulario de inserción -->
+    <form method="post" action="{form_destination}">
+        <label>{text_label1}</label>
+        <input type="number" min="0" name="{name_input1}" value="0" />
+        <br />
+        <label>{text_label2}</label>
+        <input type="text" name="{name_input2}" />
+        <br />
+        <input type="submit" name="{name_submit}" value="{text_submit}" />
+    </form>
+</body>
+</html>

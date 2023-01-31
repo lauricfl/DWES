@@ -1,0 +1,82 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" name="Calculadora" targetNamespace="http://localhost/dwes/"
+    xmlns:tns="http://localhost/dwes/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <types>
+        <xs:schema elementFormDefault="qualified" targetNamespace="http://localhost/dwes/">
+            <xs:element name="suma">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="a" type="xs:int" minOccurs="1" maxOccurs="1" />
+                        <xs:element name="b" type="xs:int" minOccurs="1" maxOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="resta">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="a" type="xs:int" minOccurs="1" maxOccurs="1" />
+                        <xs:element name="b" type="xs:int" minOccurs="1" maxOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </types>
+
+    <message name="sumaRequest">
+        <part name="parameters" element="tns:suma" />
+    </message>
+    <message name="sumaResponse">
+        <part name="result" type="xs:int"/>
+    </message>
+
+    <message name="restaRequest">
+        <part name="parameters" element="tns:resta" />
+    </message>
+    <message name="restaResponse">
+        <part name="result" type="xs:int"/>
+    </message>
+
+    <portType name="CalculadoraPortType">
+        <operation name="suma">
+            <input message="tns:sumaRequest"/>
+            <output message="tns:sumaResponse"/>
+        </operation>
+        <operation name="resta">
+            <input message="tns:restaRequest"/>
+            <output message="tns:restaResponse"/>
+        </operation>
+    </portType>
+
+    <binding name="CalculadoraBinding" type="tns:CalculadoraPortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="suma">
+            <soap:operation soapAction="" style="document"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="resta">
+            <soap:operation soapAction="" style="document"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+
+    <service name="Calculadora">
+        <port name="CalculadoraPort" binding="tns:CalculadoraBinding">
+            <soap:address location="http://localhost/dwes/dwes_22_23/UT6%20SOAP/servicioCalculadora_1/calculadora.wsdl"/>
+        </port>
+    </service>
+
+</definitions>
+
+       
