@@ -21,7 +21,7 @@
     //Llamar al metodo que me devuelve la lista de paises
     $result = $cliente->ListOfCountryNamesByName();
     //Rescatamos los datos que devuelve el servicio
-    $result = $result->ListOfCountryNamesByNameResult->tCountryCodeAndName;
+    $paises = $result->ListOfCountryNamesByNameResult->tCountryCodeAndName;
 
     ?>
 
@@ -29,7 +29,7 @@
         <label>Seleccione un país</label>
         <select name="pais" onchange="this.form.submit()">
             <?php
-            foreach ($result as $key => $value) {
+            foreach ($paises as $key => $value) {
                 echo "<option name='" . $value->sName . "'value='" . $value->sISOCode . "'>" . $value->sName . "</option>";
             }
             ?>
@@ -37,7 +37,13 @@
     </form>
     <?php
     if (isset($_SESSION['bandera'])) {
-        echo "<img src=". $_SESSION['bandera'].">";
+        echo "<br>";
+        echo "<img src=". $_SESSION['bandera']."><br>";
+        foreach($paises as $key => $value){
+            if($_SESSION['pais']===$value->sISOCode){
+                echo "Bandera de ".$value->sName;
+            }
+        }
     }
     ?>
         
