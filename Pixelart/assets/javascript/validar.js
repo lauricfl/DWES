@@ -8,7 +8,8 @@ $(document).ready(function () {
             success: function (response) {
                 // Recibo el JSON con los productos, que extraigo a un array
                 const arr = JSON.parse(response);
-                console.log(arr);
+                console.log("ksdjhfksd");
+                console.log($(this));
                 /* // Ahora debo sustituir el contenido de la vista ya cargada con los productos del array, igual que hace renderProductsTable()
                 // Primero vacío el cuerpo de la tabla por completo
                 $("#products_table > tbody").empty();

@@ -21,7 +21,7 @@ if (isset($_POST['coordenadas']) && isset($_POST['inputcolor'])) {
         $vistaPrincipal->renderizarVista("./assets/dictionaries/main.php"); //La direccion del diccionario
         //Mostramos la vista
         echo $vistaPrincipal->getVista("./assets/html/index.html");
-        echo json_encode($_POST);
+        return json_encode($_POST);
     } else {
         echo "Algo ha fallado";
     }
