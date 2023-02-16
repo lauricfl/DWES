@@ -3,12 +3,13 @@
 class Pixel
 {
 
-    public function addColor($x,$y)
+    public function addColor($x,$y, $color)
     {
         $options = array('uri' => 'http://localhost/', 'location' => 'http://s936421440.mialojamiento.es/index.php');
         $cliente = new SoapClient(null, $options);
 
-        //$cliente->updateColor(int x, int y, string color) 
+        $resultado = $cliente->updateColor($x,$y,$color); 
+        return $resultado;
         //: string --> Este método acepta tres parámetros (coordenadas y valor hexadecimal del color) y devuelve un mensaje 
         //explicativo de si se ha actualizado correctamente el color o no y por qué.
     }
