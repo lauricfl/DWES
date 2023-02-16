@@ -10,18 +10,14 @@ if (!isset($_REQUEST) || isset($_REQUEST) and empty(($_REQUEST))) {
     $vistaPrincipal->renderizarVista("./assets/dictionaries/main.php"); //La direccion del diccionario
     //Mostramos la vista
     echo $vistaPrincipal->getVista("./assets/html/index.html");
-} /* else {
-    //Si ha hecho alguna de las acciones se le redirige en funcion de lo que haya seleccionado
-    if ($_REQUEST["action"] == "matricula") {
-        //Ha pinchado sobre el botón de matricularse. Nos dirigimos al controlador de los Ciclos
-        require "./mvc/controlador/ciclosController.php";
-    } else if ($_REQUEST["action"] == "formulario") {
-        //Ha pinchado en algún ciclo y entra al formulario a través del contrador Formulario
-        require "./mvc/controlador/formularioController.php";
-    }else if($_REQUEST['action']==="confirmacion" ){
-        //Ha rellenado el formulario y le llevamos a la página de confirmacion de la matricula.
-        require "./mvc/controlador/matriculaController.php";
-    } 
-   
+} else {
+    if (isset($_REQUEST['action'])) {
+        // El usuario está mandando una acción para realizar
+        if (htmlspecialchars($_REQUEST['action'] == 'add')) {
+            // Llamo al controlador AddProductController
+            // Ahora sólo pasará por aquí cuando venga de un GET, porque el POST lo gestiono con jQuery
+            require_once './MVC/Controladores/AddColor.php';    
+        }
+    }
+    
 }
- */
