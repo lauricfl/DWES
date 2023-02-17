@@ -2,6 +2,8 @@
 require "./MVC/Vistas/Vista.php";
 
 if (!isset($_REQUEST) || isset($_REQUEST) and empty(($_REQUEST))) {
+    require_once './MVC/Controladores/MostrarColor.php';    
+/* 
     //Si el usuario no ha realizado ninguna accion se le muestra la pagina principal 
     //Se crea una nueva vista
     $vistaPrincipal = new Vista();
@@ -9,7 +11,7 @@ if (!isset($_REQUEST) || isset($_REQUEST) and empty(($_REQUEST))) {
     //Intercambiamos las llaves del html por las palabras del diccionario 
     $vistaPrincipal->renderizarVista("./assets/dictionaries/main.php"); //La direccion del diccionario
     //Mostramos la vista
-    echo $vistaPrincipal->getVista("./assets/html/index.html");
+    echo $vistaPrincipal->getVista("./assets/html/index.html"); */
 } else {
     if (isset($_REQUEST['action'])) {
         // El usuario está mandando una acción para realizar

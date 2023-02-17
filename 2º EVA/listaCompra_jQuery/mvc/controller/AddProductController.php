@@ -19,7 +19,6 @@ if (isset($_REQUEST['producto']) && isset($_REQUEST['cantidad'])) {
 
     // Llamo al método de insertar producto
     $listaCompra->insertarProducto($producto, $cantidad);
-    
 }
 
 // Llamo al método de listar productos y con esta información

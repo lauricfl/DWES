@@ -6,6 +6,7 @@ $(document).ready(function () {
             url: "./index.php?action=add",
             data: $(this).serialize(),
             success: function (response) {
+                console.log(response);
                 // Recibo el JSON con los productos, que extraigo a un array
                 const arr = JSON.parse(response);
                 console.log(arr);
