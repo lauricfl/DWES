@@ -19,12 +19,5 @@ if (isset($_POST['coordenadas']) && isset($_POST['inputcolor'])) {
     //Agregamos el color con las coordenadas a la base de datos
     //Tengo que usar el metodo intval() para transformar las coordenadas de string a int
     $pixel->addColor(intval($x), intval($y), $color);
-    if ((isset($_GET['producto']) && isset($_GET['cantidad'])) || empty($_POST)) {
-        echo $vistaPrincipal->getVista("./assets/html/index.html"); 
-    }
-    else if (isset($_POST['coordenadas']) && isset($_POST['inputcolor'])) {
-        $array = array();
-        array_push($array, $coordenadas, $color);
-        echo json_encode($array);
-    }
 }
+    echo json_encode($pixel->getPixels());

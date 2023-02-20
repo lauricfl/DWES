@@ -14,7 +14,6 @@ document.getElementById("tablero").append(fragmento);
 document.getElementById("tablero").addEventListener("click", function (e) {
   e.preventDefault();
   let atributo = e.target.id; //Aqui tengo el atributo con el id (coordenadas de la celda)
-  console.log(atributo);
   //Añado un input tranparente para que viaje con las coordenadas al POST
   let input = document.createElement("input");
   input.setAttribute("name", "coordenadas");
@@ -28,5 +27,12 @@ document.getElementById("tablero").addEventListener("click", function (e) {
 
 setInterval(()=>{
 //Cada segundo, actualiza la página con los colores y las coordenadas de la BBDD
-
-},1000)
+/* $.ajax({
+  type: "post",
+  url: "./index.php",
+  data: $(this).serialize(),
+  success: function (response) {
+      console.log("+");
+  }
+});  */
+},3000)

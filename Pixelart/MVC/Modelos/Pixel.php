@@ -18,7 +18,8 @@ class Pixel
         $options = array('uri' => 'http://localhost/', 'location' => 'http://s936421440.mialojamiento.es/index.php');
         $cliente = new SoapClient(null, $options);
 
-        $cliente->getPixels();
+        return $cliente->getPixels();
+
         /*: array --> Este método no acepta parámetros y
         devuelve un array (asociativo y numérico) con los valores de todas las columnas de la tabla (x, y, color).*/
     }
