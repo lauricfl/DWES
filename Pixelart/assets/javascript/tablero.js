@@ -1,5 +1,5 @@
 let fragmento = document.createDocumentFragment();
-
+//Insertar las 1024 celdas
 for (let index = 0; index < 32; index++) {
   let fila = document.createElement("tr");
   for (let y = 0; y < 32; y++) {
@@ -11,6 +11,7 @@ for (let index = 0; index < 32; index++) {
 }
 document.getElementById("tablero").append(fragmento);
 
+//Cuando se hace click sobre la tabla
 document.getElementById("tablero").addEventListener("click", function (e) {
   e.preventDefault();
   if (e.target.tagName === "TD") {
@@ -21,14 +22,14 @@ document.getElementById("tablero").addEventListener("click", function (e) {
     input.setAttribute("hidden", true);
     document.getElementById("datos").append(input);
     input.value = atributo;
-    document.getElementById("color").hidden = false;
+    document.getElementById("colorDiv").hidden = false;
   }
 });
-
+//Temporizador para recargar la tabla
 setInterval(() => {
-  $.ajax({
+   $.ajax({
     type: "post",
-    url: "./index.php?action=inicio",
+    url: "./index.php?action=paint",
     data: $(this).serialize(),
     success: function (response) {
         // Recibo el JSON con los productos, que extraigo a un array
@@ -42,4 +43,4 @@ setInterval(() => {
         });
       },
     });
-}, 3000);
+}, 2000);

@@ -1,7 +1,16 @@
 $(document).ready(function () {
+  //De primeras va a pintar la vista
   $.ajax({
     type: "post",
-    url: "./index.php?action=inicio",
+    url: "./index.php",
+    data: $(this).serialize(),
+    success: function (response) {
+      },
+    });  
+  //Cuando ya este la vista puesta le pedimos los colores para pintar
+  $.ajax({
+    type: "post",
+    url: "./index.php?action=paint",
     data: $(this).serialize(),
     success: function (response) {
         // Recibo el JSON con los productos, que extraigo a un array
@@ -14,8 +23,8 @@ $(document).ready(function () {
           );
         });
       },
-    });
-
+    }); 
+//Cuando seleccionemos un color lo mete a la BD y vuelve a pintar la tabla
   $("#datos").submit(function (e) {
     e.preventDefault();
     $.ajax({
