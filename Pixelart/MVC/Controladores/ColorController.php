@@ -8,7 +8,6 @@ $vistaPrincipal->renderizarVista("./assets/dictionaries/main.php"); //La direcci
 
 $pixel = new Pixel();
 if (isset($_POST['coordenadas']) && isset($_POST['inputcolor'])) {
-
     $coordenadas = $_POST['coordenadas'];
     $color = $_POST['inputcolor'];
     //Las coordenadas vienen separadas por un guión, por lo que hay que separarlo para obtener la X y la Y
