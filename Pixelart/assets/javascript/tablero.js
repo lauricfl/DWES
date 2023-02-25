@@ -15,6 +15,7 @@ document.getElementById("tablero").append(fragmento);
 document.getElementById("tablero").addEventListener("click", function (e) {
   e.preventDefault();
   if (e.target.tagName === "TD") {
+    $("#colorDiv").show();
     let atributo = e.target.id; //Aqui tengo el atributo con el id (coordenadas de la celda)
     //Añado un input tranparente para que viaje con las coordenadas al POST
     let input = document.createElement("input");
@@ -25,22 +26,28 @@ document.getElementById("tablero").addEventListener("click", function (e) {
     document.getElementById("colorDiv").hidden = false;
   }
 });
+
+$("#boton").on("click", () => {
+  $("#colorDiv").hide();
+});
+
+
 //Temporizador para recargar la tabla
 setInterval(() => {
-   $.ajax({
+  $.ajax({
     type: "post",
     url: "./index.php?action=paint",
     data: $(this).serialize(),
     success: function (response) {
-        // Recibo el JSON con los productos, que extraigo a un array
-        const pixels = JSON.parse(response);
-        //Pintar todos los pixeles
-        pixels.forEach((element) => {
-          $("#" + element[0] + "-" + element[1]).css(
-            "background-color",
-            element[2]
-          );
-        });
-      },
-    });
+      // Recibo el JSON con los productos, que extraigo a un array
+      const pixels = JSON.parse(response);
+      //Pintar todos los pixeles
+      pixels.forEach((element) => {
+        $("#" + element[0] + "-" + element[1]).css(
+          "background-color",
+          element[2]
+        );
+      });
+    },
+  });
 }, 2000);
