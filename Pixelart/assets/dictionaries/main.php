@@ -52,11 +52,15 @@ $dict = array(
       margin: auto;
       border: 1px solid black;
       background-color: white;
-      /* transform: rotate(90deg); */
+      transform: rotate(90deg); 
     }
     td {
       color: black;
       border: 1px solid black;
+    }
+
+    td:hover{
+      opacity: 0.5;
     }
 
     #divColor{

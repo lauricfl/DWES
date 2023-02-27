@@ -1,4 +1,5 @@
 let fragmento = document.createDocumentFragment();
+let tablero = document.getElementById("tablero");
 //Insertar las 1024 celdas
 for (let index = 0; index < 32; index++) {
   let fila = document.createElement("tr");
@@ -9,10 +10,10 @@ for (let index = 0; index < 32; index++) {
   }
   fragmento.append(fila);
 }
-document.getElementById("tablero").append(fragmento);
+tablero.append(fragmento);
 
 //Cuando se hace click sobre la tabla
-document.getElementById("tablero").addEventListener("click", function (e) {
+tablero.addEventListener("click", function (e) {
   e.preventDefault();
   if (e.target.tagName === "TD") {
     $("#colorDiv").show();
@@ -26,6 +27,14 @@ document.getElementById("tablero").addEventListener("click", function (e) {
     document.getElementById("colorDiv").hidden = false;
   }
 });
+//Cuando se pasa por encima de la tabla da las coordenadas
+tablero.addEventListener("mouseover", function(e){
+  if (e.target.tagName === "TD") {
+    let atributo = e.target.id; 
+    console.log(atributo);
+  }
+})
+
 
 $("#boton").on("click", () => {
   $("#colorDiv").hide();
