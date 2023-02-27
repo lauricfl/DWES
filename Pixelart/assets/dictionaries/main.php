@@ -62,7 +62,12 @@ $dict = array(
     td:hover{
       opacity: 0.5;
     }
-
+    #inputCoord{
+      text-align: center;
+      width: 45%;
+      border:1px solid blue;
+      border-radius: 10px;
+    }
     #divColor{
       display:flex;
       flex-direction:column;
@@ -79,9 +84,14 @@ $dict = array(
       height:100px;
     }
     button{
+      border: 1px solid black;
       border-radius:10px;
       padding:10px;
+      box-shadow: inset 0 0 7px 0 black; 
       font-weight:bold;
+    }
+    button:hover{
+      background-color: lightblue;
     }
   </style>',
 );

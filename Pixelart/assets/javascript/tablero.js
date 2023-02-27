@@ -18,6 +18,8 @@ tablero.addEventListener("click", function (e) {
   if (e.target.tagName === "TD") {
     $("#colorDiv").show();
     let atributo = e.target.id; //Aqui tengo el atributo con el id (coordenadas de la celda)
+    $("#inputCoord").val("Coordenada seleccionada: "+atributo);
+
     //Añado un input tranparente para que viaje con las coordenadas al POST
     let input = document.createElement("input");
     input.setAttribute("name", "coordenadas");
@@ -31,10 +33,13 @@ tablero.addEventListener("click", function (e) {
 tablero.addEventListener("mouseover", function(e){
   if (e.target.tagName === "TD") {
     let atributo = e.target.id; 
-    console.log(atributo);
+    $("#coordenadas").html("Coordenada actual: "+atributo);
   }
 })
-
+//Cuando sale de la tabla se resetea el div de informacion
+tablero.addEventListener("mouseout", function(e){
+    $("#coordenadas").html("");
+})
 
 $("#boton").on("click", () => {
   $("#colorDiv").hide();
