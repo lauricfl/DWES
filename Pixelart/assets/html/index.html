@@ -4,17 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!--     <link rel="stylesheet" src="../css/styles.css"/>
- -->    {direccion_css}
     {link_bootstrap}
     {script_bootstrap}
     {script_tag_jquery}
     {script_tag_js}
     {script_load_page}
-  
+    {direccion_css}
     <title>{titulo}</title>
   </head>
-  {estilo} 
   <body>
     <header>
       <h1>{titulo}</h1>
@@ -23,16 +20,16 @@
       <div id="{id_div_form}" hidden>
         <form id="{form_id}" method="post" action="{form_destination}">
           <div id="{id_div_color}">
-            <input type="text" id="inputCoord" readonly>
-            <br>
-            <input type="color" name="{name_input}" id="{id_input}">
-            <br>
-          <button id="{id_boton}">{txt_color}</button>
-        </div>
+            <input type="text" id="{id_inputCoord}" readonly />
+            <br />
+            <input type="color" name="{name_input}" id="{id_input}" />
+            <br />
+            <button id="{id_boton}">{txt_color}</button>
+          </div>
         </form>
       </div>
       <table id="{id_tablero}"></table>
-      <div id="coordenadas"></div>
+      <div id="{id_coord}"></div>
     </main>
     {script_js}
   </body>

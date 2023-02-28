@@ -1,6 +1,6 @@
 @font-face {
   font-family: fuente;
-  src: url(./assets/fonts/CAT-Arena.ttf);
+  src: url(../fonts/CAT-Arena.ttf);
 }
 h1{
   font-family: fuente;
@@ -10,7 +10,7 @@ h1{
 body {
   text-align: center;
   
-  background-image: url(./assets/images/lluvia.jpg);
+  background-image: url(../images/lluvia.jpg);
    background-repeat: no-repeat;
    background-size: cover;
   color: black;
@@ -21,7 +21,6 @@ body {
   margin: auto;
   border: 1px solid black;
   background-color: white;
-  transform: rotate(90deg); 
 }
 td {
   color: black;
@@ -33,6 +32,9 @@ td:hover{
 }
 #inputCoord{
   text-align: center;
+  width: 45%;
+  border:1px solid blue;
+  border-radius: 10px;
 }
 #divColor{
   display:flex;
@@ -48,9 +50,15 @@ td:hover{
 input[type="color"]{
   width:100px;
   height:100px;
+  
 }
 button{
+  border: 1px solid black;
   border-radius:10px;
   padding:10px;
+  box-shadow: inset 0 0 7px 0 black; 
   font-weight:bold;
+}
+button:hover{
+  background-color: lightblue;
 }
