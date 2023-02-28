@@ -64,7 +64,7 @@ $dict = array(
     }
     #inputCoord{
       text-align: center;
-      width: 45%;
+      width:250px;
       border:1px solid blue;
       border-radius: 10px;
     }
