@@ -5,7 +5,7 @@ for (let index = 0; index < 32; index++) {
   let fila = document.createElement("tr");
   for (let y = 0; y < 32; y++) {
     let td = document.createElement("td");
-    td.setAttribute("id", index + "-" + y);
+    td.setAttribute("id", y + "-" + index);
     fila.append(td);
   }
   fragmento.append(fila);
@@ -63,5 +63,5 @@ setInterval(() => {
         );
       });
     },
-  });
+  }); 
 }, 2000);
