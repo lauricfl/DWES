@@ -7,6 +7,7 @@ $(document).ready(function () {
             data: $(this).serialize(),
             success: function (response) {
                 const arr = JSON.parse(response);
+                console.log(arr);
                 if (!arr.nombre) {
                     // Nombre inválido
                     document.getElementById("errorNombre").innerText = "Debe tener más de 3 caracteres.";
